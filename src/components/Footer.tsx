@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -21,15 +21,18 @@ const Footer = () => {
               15+ years of experience with a perfect safety record.
             </p>
             <div className="flex space-x-2">
-              <div className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center">
-                <span className="text-xs font-semibold">FB</span>
-              </div>
-              <div className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center">
-                <span className="text-xs font-semibold">IG</span>
-              </div>
-              <div className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center">
-                <span className="text-xs font-semibold">LI</span>
-              </div>
+              <a href="#" className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110">
+                <Facebook size={16} />
+              </a>
+              <a href="#" className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110">
+                <Instagram size={16} />
+              </a>
+              <a href="#" className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110">
+                <Linkedin size={16} />
+              </a>
+              <a href="#" className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110">
+                <Twitter size={16} />
+              </a>
             </div>
           </div>
 
@@ -87,7 +90,7 @@ const Footer = () => {
         <div className="border-t border-border mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-muted-foreground">
-              © 2024 Clear Windows Ontario. All rights reserved.
+              © 2025 Clear Windows Ontario. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>

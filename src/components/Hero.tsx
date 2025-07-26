@@ -4,7 +4,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { useState } from 'react';
 import { Star, Shield, Users, Clock } from 'lucide-react';
-import heroImage from '@/assets/hero-window-cleaning.jpg';
+import heroImage from '@/assets/hero-skyscrapers.jpg';
 
 const Hero = () => {
   const [formData, setFormData] = useState({
@@ -30,15 +30,16 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen relative flex items-center pt-20">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Professional window cleaning" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
+    <section className="min-h-screen relative flex items-center pt-20 overflow-hidden">
+      {/* Background Image with Parallax Effect */}
+      <div className="absolute inset-0 z-0 will-change-transform" style={{
+        transform: 'translateZ(0)',
+        backgroundImage: `url(${heroImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 to-primary/65"></div>
       </div>
 
       <div className="container-custom relative z-10">
