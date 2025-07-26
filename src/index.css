@@ -9,32 +9,56 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 218 100% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 218 100% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 218 100% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Navy blue primary - professional and trustworthy */
+    --primary: 218 100% 12%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 218 100% 8%;
+    
+    /* Light gray secondary */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 218 100% 12%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 25% 45%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 212 100% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 218 100% 12%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Custom design tokens */
+    --navy-50: 218 100% 97%;
+    --navy-100: 218 100% 94%;
+    --navy-500: 218 100% 12%;
+    --navy-600: 218 100% 8%;
+    --navy-900: 218 100% 4%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(218 100% 12%), hsl(218 100% 8%));
+    --gradient-hero: linear-gradient(135deg, hsl(218 100% 12% / 0.95), hsl(218 100% 8% / 0.9));
+    --gradient-section: linear-gradient(180deg, hsl(210 20% 98%), hsl(0 0% 100%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(218 100% 12% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(218 100% 12% / 0.1);
+    --shadow-button: 0 4px 14px -2px hsl(218 100% 12% / 0.25);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -100,6 +124,83 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero button variant */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-primary-hover text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg shadow-[var(--shadow-button)] hover:shadow-[var(--shadow-elegant)] transition-[var(--transition-smooth)] hover:scale-105;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-[var(--transition-smooth)] hover:shadow-[var(--shadow-card)] hover:-translate-y-1;
+  }
+
+  /* Section padding */
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  /* Container max width */
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Smooth reveal animations */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .fade-in-left {
+    animation: fadeInLeft 0.6s ease-out forwards;
+  }
+  
+  .fade-in-right {
+    animation: fadeInRight 0.6s ease-out forwards;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
