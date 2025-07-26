@@ -53,10 +53,10 @@ const Header = () => {
               Services
             </button>
             <button 
-              onClick={() => scrollToSection('about')}
+              onClick={() => scrollToSection('why-us')}
               className="text-foreground hover:text-primary transition-colors"
             >
-              About
+              Why Choose Us
             </button>
             <button 
               onClick={() => scrollToSection('testimonials')}
@@ -64,19 +64,19 @@ const Header = () => {
             >
               Reviews
             </button>
+             <button 
+              onClick={() => scrollToSection('about')}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              About
+            </button>
             <button 
               onClick={() => scrollToSection('areas')}
               className="text-foreground hover:text-primary transition-colors"
             >
               Service Areas
             </button>
-            <a 
-              href="tel:+1-800-WINDOWS" 
-              className="flex items-center space-x-2 text-primary hover:text-primary-hover transition-colors"
-            >
-              <Phone size={16} />
-              <span className="font-semibold">1-800-WINDOWS</span>
-            </a>
+           
             <Button 
               onClick={() => scrollToSection('quote')}
               className="btn-hero"

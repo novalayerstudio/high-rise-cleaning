@@ -100,34 +100,7 @@ const ServiceAreas = () => {
           ))}
         </div>
 
-        {/* Contact Section */}
-        <div className="text-center">
-          <div className="bg-white rounded-2xl p-8 shadow-lg max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-primary mb-4">
-              Don't See Your Area?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              We're constantly expanding our service areas. Contact us to see if we can 
-              serve your location or to discuss our travel service options.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="tel:+1-800-WINDOWS"
-                className="flex items-center justify-center space-x-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-hover transition-colors"
-              >
-                <Phone size={20} />
-                <span className="font-semibold">1-800-WINDOWS</span>
-              </a>
-              <button 
-                onClick={() => document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn-hero"
-              >
-                Request Service Quote
-              </button>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );
